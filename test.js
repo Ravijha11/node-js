@@ -8,4 +8,4 @@
 // great(654)
 
 const abc = require('./people')
-console.log(abc[1])
+console.log(abc)
