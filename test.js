@@ -12,15 +12,20 @@
 
 const fs = require('fs');
 
-if(fs.existsSync('./a.txt')){
-  fs.unlink('./a.txt',(err) =>{
-    if(err){
-      console.log("file is giving errror")
-      return
-    }
-    console.log("file has been deleted")
-  })
-}
+const readStream = fs.createReadStream('./file.js',{encoding: 'utf8'});
+readStream.on('data',(chunk) => {
+  console.log(chunk)
+})
+
+// if(fs.existsSync('./a.txt')){
+//   fs.unlink('./a.txt',(err) =>{
+//     if(err){
+//       console.log("file is giving errror")
+//       return
+//     }
+//     console.log("file has been deleted")
+//   })
+// }
 // fs.mkdir('./bigdata', (err)=>{
 //   if(err){
 //     console.log("error is showing")
